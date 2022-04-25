@@ -43,7 +43,7 @@ router.post('/aniversariantes/add', upload.single('foto'), (req, res) => {
   }
 
 
-  if(nome.length <5 && nome) {
+  if(nome.length <5) {
     mensagens.push({erro: "nome muito curto"})
   }
 
@@ -69,8 +69,6 @@ router.post('/aniversariantes/add', upload.single('foto'), (req, res) => {
     })
   }
 
-  console.log(dataAniversario)
-  console.log(nome)
 })
   
   module.exports = router

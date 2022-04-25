@@ -23,7 +23,7 @@
             <center><button type="submit" class="btn btn-primary">Enviar</button></center>
             <br>
            
-            <% if (mensagem === "" && titulo === "") { %>
+            <% if (mensagem === "" || titulo === "") { %>
                 <% mensagens.forEach(mensagens => { %> 
                   <div alerta class="alert alert-danger" role="alert">
                     <%= mensagens.erro %> 

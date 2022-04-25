@@ -10,7 +10,7 @@
     <%- include('partials/navbar') %>
       <div secao2>
 
-        <form class="row g-3" action="/admin/reunioes/cadastrar" method="post">
+        <form class="row g-3" action="/admin/reunioes/cadastrar/add" method="post">
           <div class="col-md-6">
             <label for="dia" class="form-label">Dia</label>
             <input type="date" class="form-control" placeholder="Digite o dia da reuniao" name="dia">
@@ -38,6 +38,21 @@
           <div class="col-12">
             <center><button type="submit" class="btn btn-primary">Incluir</button></center>
           </div>
+          <br>
+          <% if (dia === "" || hora === "" || assunto === "" || participante1 === "" || participante2 ==="" ) { %>
+            <% mensagem.forEach(mensagem => { %>
+              <div alerta class="alert alert-danger">
+                <%= mensagem.erro %> 
+              </div>
+            <% }) %>
+          <% }else if(dia !== undefined && hora !== undefined && assunto !== undefined && participante1 !== undefined && participante2 !==undefined ) { %>   
+            <% mensagem.forEach(mensagem => { %>
+              <div alerta class="alert alert-success">
+                <%= mensagem.sucesso %> 
+              </div>
+              <% }) %>
+            
+            <% } %>
         </form>      
       </div>
     <%- include('partials/footer') %>
