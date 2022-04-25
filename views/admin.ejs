@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/css/admin.css">
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
+    <title>Admin</title>
+  </head>
+  <body>
+
+    <%- include('partials/navbar') %>
+
+    <div secao2>
+      <div class="card" style="width: 18rem;">
+        <img src="/css/img/icone2.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Aniversariantes</h5>
+          <p class="card-text">Gerencie os aniversariantes do mês</p>
+          <center>
+            <a href="/admin/aniversariantes/exibir" class="btn btn-primary">Exibir</a>
+            <a href="/admin/aniversariantes/cadastrar" class="btn btn-primary">Incluir</a>
+          </center>
+        </div>
+      </div>
+
+      <div class="card" style="width: 18rem;">
+        <img src="/css/img/icone6.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Cardápio</h5>
+          <p class="card-text">Gerencie o cardápio do mês</p>
+          <center><a href="#" class="btn btn-primary">Gerenciar</a></center>
+        </div>
+      </div>
+
+      <div class="card" style="width: 18rem;">
+        <img src="/css/img/icone5.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Reuniões</h5>
+          <p class="card-text">Gerencie as reuniões do mês</p>
+          <center>
+          <a href="/admin/reunioes/exibir" class="btn btn-primary">Exibir</a>
+          <a href="/admin/reunioes/cadastrar" class="btn btn-primary">Incluir</a>
+          </center>
+        </div>
+      </div>
+
+      <div class="card" style="width: 18rem;">
+        <img src="/css/img/icone7.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Segurança</h5>
+          <p class="card-text">Gerencie os comunicados de segurança</p>
+          <center><a href="/admin/postagem/seguranca/exibir" class="btn btn-primary">Exibir</a>
+          <a href="/admin/postagem/seguranca/cadastrar" class="btn btn-primary">Incluir</a></center>
+          
+        </div>
+      </div>
+
+
+      <div class="card" style="width: 18rem;">
+        <img src="/css/img/icone3.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Menu principal</h5>
+          <p class="card-text">Gerencie as imagens que aparecem na tela inicial</p>
+          <center><a href="" class="btn btn-primary">Exibir</a>
+          <a href="/admin/imagens/cadastrar" class="btn btn-primary">Incluir</a></center>
+        </div>
+      </div>
+
+      <div class="card" style="width: 18rem;">
+        <img src="/css/img/icone3.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Comunicados</h5>
+          <p class="card-text">Gerencie os comunicados da empresa</p>
+          <center><a href="/admin/comunicados/exibir" class="btn btn-primary">Exibir</a>
+          <a href="/admin/comunicados/cadastrar" class="btn btn-primary">Incluir</a></center>
+        </div>
+      </div>
+    </div>
+    
+    <%- include('partials/footer') %>
+    <script type="/bootstrap/js/bootstrap.js">
+    </script>
+  </body>
+</html>

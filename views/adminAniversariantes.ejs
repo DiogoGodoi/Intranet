@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/css/adminAniversariantes.css">
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <title>Aniversariantes</title>
+  </head>
+  <body>
+    <%- include('partials/navbar') %>
+      <div secao2>
+
+        <form class="row g-3" action="/admin/aniversariantes/add" method="post">
+          <div class="col-6">
+            <label for="setor" class="form-label">Setor</label>
+            <select name="setor" class="form-select">
+              <option selected name="">ADMINISTRATIVO</option>
+              <option name="">ALMOXARIFADO</option>
+              <option name="">TECNOLOGIA DA INFORMAÇÃO</option>
+              <option name="">LIMPEZA</option>
+              <option name="">MECANICA DE MANUTENÇÃO</option>
+              <option name="">ELETRICA</option>
+              <option name="">ENCARREGADO DE PRODUÇÃO</option>
+              <option name="">LIDER DE PRODUÇÃO</option>
+              <option name="">OPERADOR DE PRODUÇÃO</option>
+              <option name="">OPERADOR DE EMPILHADEIRA</option>
+              <option name="">SOLDA</option>
+              <option name="">SERVICOS GERAIS</option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <label for="dataAniversario" class="form-label">Data</label>
+            <input type="date" class="form-control" placeholder="Digite a data de nascimento" name="dataAniversario">
+          </div>
+          <div class="col-12">
+            <label for="nome" class="form-label">Nome do colaborador</label>
+            <input type="text" class="form-control" placeholder="Digite o nome do colaborador" name="nome">
+          </div>
+          <div class="col-md-12">
+            <label for="foto" class="form-label">Foto</label>
+            <input type="file" class="form-control" placeholder="Arquivo" name="foto">
+          </div>
+          <div class="col-12">
+          </div>
+          <div class="col-12">
+            <center><button type="submit" class="btn btn-primary">Incluir</button></center>
+          </div>
+        </form>
+      </div>
+    <%- include('partials/footer') %>
+    <script type="/css/bootstrap.js"></script>
+  </body>
+</html>

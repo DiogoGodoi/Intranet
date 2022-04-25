@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/css/adminExibirComunicados.css">
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
+    <title>Aniversariantes</title>
+  </head>
+  <body>
+    <%- include('partials/navbar') %>
+      <div secao2>
+        <% comunicados.forEach(function (comunicados) { %>
+          <div class="card border-primary mb-3 col-12">
+            <div class="card-header"><center><h4>Comunicados</h4></center></div>
+            <div class="card-body">
+              <h5 class="card-title"><h5>Assunto: <%= comunicados.titulo %></h5>
+              <p class="card-text"><%= comunicados.mensagem %></p>
+            </div>
+            <div class="card-footer bg-transparent border-primary">
+              <center><a href="/admin/comunicados/alterar/<%=comunicados.id %>"><button type="button" class="btn btn-primary">Alterar</button></a>
+              <a href="/admin/comunicados/deletar/<%=comunicados.id %>"><button type="button" class="btn btn-primary">Deletar</button></a></center>  
+            </div>
+        </div>
+        <% }) %>
+     </div>
+    <%- include('partials/footer') %>
+    <script type="/bootstrap/js/bootstrap.js"></script>
+  </body>
+</html>
+

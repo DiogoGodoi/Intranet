@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/css/adminCadastrarAniversariantes.css">
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
+    <title>Aniversariantes</title>
+  </head>
+  <body>
+    <%- include('partials/navbar') %>
+      <div secao2>
+        <form class="row g-3" action="/admin//imagens/cadastrar" method="post" enctype = "multipart/form-data">
+          <div class="col-md-12">
+            <label for="foto" class="form-label">Foto</label>
+            <input type="file" class="form-control" placeholder="Arquivo" name="foto">
+          </div>
+          <div class="col-12">
+            <center><button type="submit" class="btn btn-primary">Incluir</button></center>
+          </div>
+        </form>
+      </div>
+    <%- include('partials/footer') %>
+    <script type="/bootstrap/js/bootstrap.js"></script>
+  </body>
+</html>

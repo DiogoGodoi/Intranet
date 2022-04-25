@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/css/adminExibirAniversariantes.css">
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
+    <title>Aniversariantes</title>
+  </head>
+  <body>
+    <%- include('partials/navbar') %>
+      <div secao2>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Nome</th>
+              <th scope="col">Setor</th>
+              <th scope="col">Aniversário</th>
+              <th scope="col">Ação</th>
+            </tr>
+          </thead>
+          <% aniversariantes.forEach(function(aniversariantes) { %>
+          <tbody>
+            <tr>
+              <th scope="row"><%= aniversariantes.nome %></th>
+              <td><%= aniversariantes.setor %></td>
+              <td><%= aniversariantes.dataAniversario %></td>
+              <td><a href="/admin/aniversariantes/alterar/<%=aniversariantes.id %>"><button type="button" class="btn btn-primary">Alterar</button></a></td>
+              <td><a href="/admin/aniversariantes/deletar/<%=aniversariantes.id %>"><button type="button" class="btn btn-primary">Deletar</button></a></td>
+            </tr>
+          </tbody>
+          <% }); %>
+        </table>
+      </div>
+    <%- include('partials/footer') %>
+    <script type="/bootstrap/js/bootstrap.js"></script>
+  </body>
+</html>
+

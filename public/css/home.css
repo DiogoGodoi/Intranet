@@ -1,0 +1,102 @@
+body{
+  padding: 0px;
+  margin: 0px;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 250px auto 300px 300px 300px 300px 300px 150px;
+  grid-template-columns: 10% 80% 10%;
+  grid-template-areas:
+               'cabecalho cabecalho cabecalho'
+               'cabecalho2 cabecalho2 cabecalho2'
+               'secao1 secao2 secao3'
+               'secao4 secao4 secao4'
+               'secao5 secao5 secao5'
+               'secao6 secao6 secao6'
+               'secao7 secao7 secao7'
+               'secao8 secao8 secao8'
+               'footer footer footer';
+}
+
+[cabecalho] {
+  grid-area: cabecalho;
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 0%, rgba(31,6,164,1) 40%, rgba(54,3,210,1) 70%, rgba(77,0,255,1) 97%);
+}
+
+[cabecalho2] {
+  width: 100%;
+  grid-area: cabecalho2;
+  background-image:url('/css/img/bannerUser.jpg');
+  background-size: cover;
+}
+[secao1] {
+  grid-area: secao1;
+}
+[secao2] {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  grid-area: secao2;
+}
+[secao3] {
+  grid-area: secao3;
+}
+[secao4] {
+  grid-area: secao4;
+  display: flex;
+  flex-direction: row; 
+}
+[secao5] {
+  grid-area: secao5;
+  display: flex;
+  flex-direction: row; 
+}
+[secao6] {
+  grid-area: secao6;
+  display: flex;
+  flex-direction: row; 
+  
+}
+[secao7] {
+  grid-area: secao7;
+  display: flex;
+  flex-direction: row;
+}
+[secao8] {
+  grid-area: secao8;
+  display: flex;
+  flex-direction: row; 
+}
+
+[footer]{
+  grid-area: footer;  
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 0%, rgba(31,6,164,1) 40%, rgba(54,3,210,1) 70%, rgba(77,0,255,1) 97%);
+}
+
+[enquadramentoSecaoTexto]{
+  height: 300px;
+  background-color: rgb(4, 176, 255);
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+[enquadramentoSecoes] {
+  height: 300px;
+  background-color: rgb(4, 176, 255);
+  display: flex;
+  flex-direction: row;
+  justify-content:center;
+  align-items: center;
+}
+
+[imagemDaSecao] {
+  height: 180px;
+  width: auto;
+}

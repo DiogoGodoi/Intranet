@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/adminAlterarPostagemSeguranca.css">
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
+    <title>Document</title>
+</head>
+<body>
+    <%- include('partials/navbar') %>
+    
+
+    <div secao2>
+        <div class="mb-3 col-12">
+            <form action="/admin/comunicados/alterar" method="post">
+                <% comunicados.forEach(function(comunicados) { %>
+                <input type="hidden" name="id" value="<%= comunicados.id %>">
+                <label for="exampleFormControlInput1" class="form-label">Titulo</label>
+                <input type="text" class="form-control" placeholder="Titulo" name="titulo" value="<%= comunicados.titulo %>">
+                <br>
+                <label for="exampleFormControlTextarea1" class="form-label">Postagem</label>
+                <textarea class="form-control" rows="5"  name="mensagem"><%=comunicados.mensagem %></textarea><br><br>
+                <center><button type="submit" class="btn btn-primary">Alterar</button></center>
+                <% }) %>
+            </form>
+        </div>
+    </div>
+
+    <%- include('partials/footer') %>
+    <script src="/bootstrap/js/bootstrap.js"></script>
+</body>
+</html>

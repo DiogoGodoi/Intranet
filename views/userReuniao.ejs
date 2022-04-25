@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/css/UserReuniao.css">
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
+    <title>Aniversariantes</title>
+  </head>
+  <body>
+    <%- include('partials/navbar') %>
+      <div secao2>
+        <div class="container col-12">
+          <div class="card" style="margin-top: 20px;">
+            <div class="card-header card-text">
+              <center>
+                  <h4>Agenda de Reuniões</h4>
+              </center>
+          </div>
+              <div class="card-body" style="background-color: blue;">
+                <center>
+                    <img src="/css/img/icone5.png" class="card-img-top" style="height: 200px; width: 200px;">
+                </center>
+               </div>
+               </div>
+               
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Data</th>
+              <th scope="col">Hora</th>
+              <th scope="col">Assunto</th>
+              <th scope="col">Participantes</th>
+            </tr>
+          </thead>
+          <% reunioes.forEach(function(reunioes) { %>
+          <tbody>
+            <tr>
+              <th scope="row"><%= reunioes.dia %></th>
+              <td><%= reunioes.hora %></td>
+              <td><%= reunioes.assunto %></td>
+              <td>
+                <%= reunioes.participante1 %>  <%= reunioes.participante2 %>
+                <%= reunioes.participante3 %>  <%= reunioes.participante4 %>
+                <%= reunioes.participante5 %>  <%= reunioes.participante6 %>
+                <%= reunioes.participante7 %>  <%= reunioes.participante8 %>
+                <%= reunioes.participante9 %>  <%= reunioes.participante10 %><td>
+            </tr>
+          </tbody>
+          <% }); %>
+        </table>
+      </div>
+    </div>
+    <%- include('partials/footer') %>
+    <script type="/bootstrap/js/bootstrap.js"></script>
+  </body>
+</html>
+

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/css/adminAlterarReuniao.css">
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
+    <title>Aniversariantes</title>
+  </head>
+  <body>
+    <%- include('partials/navbar') %>
+    <div secao2>
+      <form class="row g-3" action="/admin/reunioes/alterar" method="post">
+        <% reunioes.forEach(function (reunioes) { %>
+          <input type="hidden" name="id" value="<%= reunioes.id%>">
+        <div class="col-md-6">
+            <label for="dia" class="form-label">Dia</label>
+            <input type="date" class="form-control" name="dia" value="<%=reunioes.dia %>">
+          </div>
+          <div class="col-6">
+            <label for="hora" class="form-label">Hora</label>
+            <input type="text" class="form-control" placeholder="digite a hora da reuniao" name="hora" value="<%=reunioes.hora %>">
+          </div>
+          <div class="col-12">
+            <label for="assunto" class="form-label">Assunto</label>
+            <input type="text" class="form-control" placeholder="digite o assunto" name="assunto" value="<%= reunioes.assunto %>">
+          </div>
+          <div class="col-md-12">
+            <label for="colaborador" class="form-label">Participante 1</label>
+            <input type="text" class="form-control" placeholder="digite o nome" name="participante1" value="<%= reunioes.participante1 %>">
+          </div>
+            <div class="col-md-12">
+              <label for="colaborador" class="form-label">Participante2</label>
+              <input type="text" class="form-control" placeholder="digite o nome" name="participante2" value="<%= reunioes.participante2%>">
+            </div>
+            <div class="col-md-12">
+              <label for="colaborador" class="form-label">Participante3</label>
+              <input type="text" class="form-control" placeholder="digite o nome" name="participante3" value="<%= reunioes.participante3%>">
+            </div>
+            <div class="col-md-12">
+              <label for="colaborador" class="form-label">Participante4</label>
+              <input type="text" class="form-control" placeholder="digite o nome" name="participante4" value="<%= reunioes.participante4%>">
+            </div>
+            <div class="col-md-12">
+              <label for="colaborador" class="form-label">Participante5</label>
+              <input type="text" class="form-control" placeholder="digite o nome" name="participante5" value="<%= reunioes.participante5%>">
+            </div>
+            <div class="col-md-12">
+              <label for="colaborador" class="form-label">Participante6</label>
+              <input type="text" class="form-control" placeholder="digite o nome" name="participante6" value="<%= reunioes.participante6%>">
+            </div>
+            <div class="col-md-12">
+              <label for="colaborador" class="form-label">Participante7</label>
+              <input type="text" class="form-control" placeholder="digite o nome" name="participante7" value="<%= reunioes.participante7%>">
+            </div>
+            <div class="col-md-12">
+              <label for="colaborador" class="form-label">Participante8</label>
+              <input type="text" class="form-control" placeholder="digite o nome" name="participante8" value="<%= reunioes.participante8%>">
+            </div>
+            <div class="col-md-12">
+              <label for="colaborador" class="form-label">Participante9</label>
+              <input type="text" class="form-control" placeholder="digite o nome" name="participante9" value="<%= reunioes.participante9%>">
+            </div>
+            <div class="col-md-12">
+              <label for="colaborador" class="form-label">Participante10</label>
+              <input type="text" class="form-control" placeholder="digite o nome" name="participante10" value="<%= reunioes.participante10%>">
+            </div>
+            <div class="col-12">
+              <center><button type="submit" class="btn btn-primary">Alterar</button></center>
+            </div>
+            <% }) %>     
+          </form> 
+        </div>
+    <%- include('partials/footer') %>
+    <script type="/bootstrap/js/bootstrap.js"></script>
+    <script></script>
+  </body>
+</html>

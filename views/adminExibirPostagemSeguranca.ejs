@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/css/adminExibirPostagemSeguranca.css">
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
+    <title>Aniversariantes</title>
+  </head>
+  <body>
+    <%- include('partials/navbar') %>
+      <div secao2>
+        <% postagens.forEach(function (postagens) { %>
+          <div class="card border-primary mb-3 col-12">
+            <div class="card-header"><center><h4>Segurança do Trabalho</h4></center></div>
+            <div class="card-body">
+              <h5 class="card-title"><h5>Assunto: <%= postagens.titulo %></h5>
+              <p class="card-text"><%= postagens.mensagem %></p>
+            </div>
+            <div class="card-footer bg-transparent border-primary">
+              <center><a href="/admin/postagem/seguranca/alterar/<%=postagens.id %>"><button type="button" class="btn btn-primary">Alterar</button></a>
+              <a href="/admin/postagem/seguranca/deletar/<%=postagens.id %>"><button type="button" class="btn btn-primary">Deletar</button></a></center>  
+            </div>
+        </div>
+        <% }) %>
+     </div>
+    <%- include('partials/footer') %>
+    <script type="/bootstrap/js/bootstrap.js"></script>
+  </body>
+</html>
+

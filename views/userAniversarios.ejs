@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/css/UserAniversarios.css">
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
+    <title>Aniversariantes</title>
+  </head>
+
+  <%- include('partials/navbar') %>
+  <div secao2>
+    <div class="container col-12" style="padding: 80px;">
+        <div cardInline class="card">
+            <div class="card-header card-text">
+                <center>
+                    <h4>Aniversariantes</h4>
+                </center>
+            </div>
+            <div card class="card-body">
+                <center>
+                    <img src="/css/img/icone2.png" class="card-img-top" style="height: 250px; width: 250px;">
+                </center>
+            </div>
+            <div cardInline style="width: 800px;">
+            <% aniversariantes.forEach(function(aniversariantes) { %>
+              <div class="card col-4">
+                <img style="height: 320px; width: 265px" src="data:image/<%=aniversariantes.foto.contentType%>;base64,<%=aniversariantes.foto.data.toString('base64')%>">
+                <div class="card-body">
+                <h5 style="font-size: medium;" class="card-title"><%= aniversariantes.nome %></h5>
+                <p style="font-size: small;" class="card-text">Setor: <%= aniversariantes.setor %><br>
+                 Data: <%= aniversariantes.dataAniversario %>
+                </div>
+              </div>
+            <% }) %>
+          </div>
+
+        </div>    
+    </div>
+</div>
+
+  <%- include('partials/footer') %>
+  <script type="/bootstrap/js/bootstrap.js"></script>
+</body>
+</html>

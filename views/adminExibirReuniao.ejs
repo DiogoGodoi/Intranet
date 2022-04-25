@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/css/adminExibirReuniao.css">
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
+    <title>Aniversariantes</title>
+  </head>
+  <body>
+    <%- include('partials/navbar') %>
+      <div secao2>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Data</th>
+              <th scope="col">Hora</th>
+              <th scope="col">Assunto</th>
+              <th scope="col">Participantes</th>
+            </tr>
+          </thead>
+          <% reunioes.forEach(function(reunioes) { %>
+          <tbody>
+            <tr>
+              <th scope="row"><%= reunioes.dia %></th>
+              <td><%= reunioes.hora %></td>
+              <td><%= reunioes.assunto %></td>
+              <td>
+                <%= reunioes.participante1 %>  <%= reunioes.participante2 %>
+                <%= reunioes.participante3 %>  <%= reunioes.participante4 %>
+                <%= reunioes.participante5 %>  <%= reunioes.participante6 %>
+                <%= reunioes.participante7 %>  <%= reunioes.participante8 %>
+                <%= reunioes.participante9 %>  <%= reunioes.participante10 %><td>
+              <td>
+              <a href="/admin/reunioes/alterar/<%=reunioes.id %>"><button type="button" class="btn btn-primary">Alterar</button></a>
+              <a href="/admin/reunioes/deletar/<%=reunioes.id %>"><button type="button" class="btn btn-primary">Deletar</button></a></td>
+            </tr>
+          </tbody>
+          <% }); %>
+        </table>
+      </div>
+    <%- include('partials/footer') %>
+    <script type="/bootstrap/js/bootstrap.js"></script>
+  </body>
+</html>
+

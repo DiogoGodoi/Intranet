@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <title>Home</title>
+</head>
+<body>
+
+    <%- include('partials/navbar') %> 
+
+    <div secao2>
+
+            <% imagens.forEach(function(imagens) { %>
+            <div class="col-4">
+                <img src="data:image/<%=imagens.foto.contentType%>;base64,<%=imagens.foto.data.toString('base64')%>" class="d-block w-100" alt="...">
+            </div>
+                <% }) %>
+          </div>
+          
+          <div secao4>      
+            <div enquadramentoSecoes class="col-4">
+                <img imagemDaSecao src="/css/img/icone2.png" alt="" srcset="">
+            </div>
+            <div class="col-8">
+                <div enquadramentoSecaoTexto>
+                    <h5 class="card-title">
+                      Aniversariantes do mês
+                    </h5><br>
+                    <p class="card-text">Veja aqui a lista dos nossos colaboradores que fazem aniversários neste mês</p>
+                    <br>
+                    <a href="/home/aniversariantes" class="btn btn-primary">Clique aqui</a>
+                  </div>
+            </div>
+    </div>
+    <div secao5>
+            <div enquadramentoSecoes class="col-4" style="background-color: rgb(4, 151, 219);">
+                <img imagemDaSecao src="/css/img/icone3.png" alt="" srcset="">
+            </div>
+            <div class="col-8">
+                <div enquadramentoSecaoTexto style="background-color: rgb(4, 151, 219);">
+                    <h5 class="card-title">
+                      Comunicados
+                    </h5><br>
+                    <p class="card-text">Veja aqui os comunicados da empresa</p>
+                    <br>
+                    <a href="/home/comunicados/exibir" class="btn btn-primary">Clique aqui</a>
+                  </div>
+            </div>
+    </div>
+    <div secao6>
+            <div enquadramentoSecoes class="col-4">
+                <img imagemDaSecao src="/css/img/icone6.png" alt="" srcset="">
+            </div>
+            <div class="col-8">
+                <div enquadramentoSecaoTexto>
+                    <h5 class="card-title">
+                      Refeitório
+                    </h5><br>
+                    <p class="card-text">Consulte o cardápio do mês do nosso refeitório</p>
+                    <br>
+                    <a href="" class="btn btn-primary">Clique aqui</a>
+                  </div>
+            </div>
+    </div>
+    <div secao7>
+            <div enquadramentoSecoes class="col-4" style="background-color: rgb(4, 151, 219);">
+                <img imagemDaSecao src="/css/img/icone7.png" alt="" srcset="">
+            </div>
+            <div class="col-8">
+                <div enquadramentoSecaoTexto style="background-color: rgb(4, 151, 219);">
+                    <h5 class="card-title">
+                      Segurança do trabalho
+                    </h5><br>
+                    <p class="card-text">Informativo sobre a segurança no dia a dia</p>
+                    <br>
+                    <a href="/home/postagem/seguranca/exibir" class="btn btn-primary">Clique aqui</a>
+                  </div>
+            </div>
+    </div>
+    <div secao8>
+            <div enquadramentoSecoes class="col-4">
+                <img imagemDaSecao src="/css/img/icone5.png" alt="" srcset="">
+            </div>
+            <div class="col-8">
+                <div enquadramentoSecaoTexto>
+                    <h5 class="card-title">
+                     Reuniões
+                    </h5><br>
+                    <p class="card-text">Veja aqui a agenda de reuniões da empresa</p>
+                    <br>
+                    <a href="/home/reunioes" class="btn btn-primary">Clique aqui</a>
+                  </div>
+            </div>
+    </div>
+
+    <%- include('partials/footer') %>
+
+</body>
+</html>

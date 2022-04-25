@@ -1,0 +1,41 @@
+body{
+  padding: 0px;
+  margin: 0px;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 10% 250px 400px 250px;
+  grid-template-columns: 10% 80% 10%;
+  grid-template-areas:
+               'cabecalho cabecalho cabecalho'
+               'cabecalho2 cabecalho2 cabecalho2'
+               'secao1 secao2 secao3'
+               'footer footer footer';
+}
+
+[cabecalho] {
+  grid-area: cabecalho;
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 0%, rgba(31,6,164,1) 40%, rgba(54,3,210,1) 70%, rgba(77,0,255,1) 97%);
+}
+
+[cabecalho2] {
+  grid-area: cabecalho2;
+  background-image:url('/css/img/banner.jpg');
+}
+[secao1] {
+  grid-area: secao1;
+}
+[secao2] {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  grid-area: secao2;
+}
+[secao3] {
+  grid-area: secao3;
+}
+[footer]{
+  grid-area: footer;
+}
