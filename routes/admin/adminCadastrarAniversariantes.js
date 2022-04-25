@@ -22,35 +22,35 @@ const upload = multer({ storage: storage });
 
 //Rota de cadastro de aniversariantes
 router.get('/aniversariantes/cadastrar', (req, res) => {
-  
-  var erros = []
-  res.render('adminCadastrarAniversariantes', {erros})
+  var mensagens = [];
+  var dataAniversario = req.body.dataAniversario;
+  var nome = req.body.nome;
+  res.render('adminCadastrarAniversariantes', {mensagens, nome, dataAniversario})
 })
 //Rota de post de cadastro de aniversariantes
 router.post('/aniversariantes/add', upload.single('foto'), (req, res) => {
 
-  var erros = []
+  var mensagens = [];
+  var dataAniversario = req.body.dataAniversario;
+  var nome = req.body.nome;
   
-  if (!req.body.dia || typeof req.body.dia == undefined || req.body.dia == null) {
-    erros.push({texto: 'data de aniversário inválida'})
+  if (!dataAniversario || typeof dataAniversario == undefined || dataAniversario == null) {
+    mensagens.push({erro: 'A data de aniversário não pode ser nula'})
   }
 
-  if (!req.body.foto || typeof req.body.foto == undefined || req.body.foto == null) {
-    erros.push({texto: 'insira a foto'})
+  if (!nome || typeof nome == undefined || nome == null) {
+    mensagens.push({erro: 'O campo nome não pode ser nulo'})
   }
 
-  if (!req.body.nome || typeof req.body.nome == undefined || req.body.nome == null) {
-    erros.push({texto: 'Nome inválido'})
+
+  if(nome.length <5 && nome) {
+    mensagens.push({erro: "nome muito curto"})
   }
 
-  if(req.body.nome.length <4) {
-    erros.push({texto: "nome muito curto"})
-  }
-      
-  if(erros.length > 0) {
-    res.render('adminCadastrarAniversariantes', {erros: erros})
+  if(mensagens.length > 0) {
+    res.render('adminCadastrarAniversariantes', {mensagens: mensagens, nome, dataAniversario})
+  
   }else{
-  
       const novoAniversariante = {
       nome: req.body.nome,
       setor: req.body.setor,
@@ -61,12 +61,16 @@ router.post('/aniversariantes/add', upload.single('foto'), (req, res) => {
       } 
     }
     new Aniversariantes(novoAniversariante).save().then(()=>{
-      res.render('adminCadastrarAniversariantes')
+      mensagens.push({sucesso: "Aniversariante cadastrado"})
+      res.render('adminCadastrarAniversariantes', {mensagens: mensagens, nome, dataAniversario})
       console.log('Aniversariante cadastrado com sucesso')
     }).catch((erro)=>{
       console.log('Erro no cadastro', erro)
     })
   }
+
+  console.log(dataAniversario)
+  console.log(nome)
 })
   
   module.exports = router

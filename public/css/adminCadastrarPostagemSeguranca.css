@@ -3,7 +3,7 @@ body{
   margin: 0px;
   min-height: 100vh;
   display: grid;
-  grid-template-rows: auto 250px 500px 150px;
+  grid-template-rows: auto 250px auto 150px;
   grid-template-columns: 10% 80% 10%;
   grid-template-areas:
                'cabecalho cabecalho cabecalho'
@@ -41,4 +41,10 @@ body{
   grid-area: footer;  background: rgb(2,0,36);
   background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 0%, rgba(31,6,164,1) 40%, rgba(54,3,210,1) 70%, rgba(77,0,255,1) 97%);
 
+}
+[alerta] {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 }

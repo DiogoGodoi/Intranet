@@ -5,6 +5,7 @@ const Aniversario = new Schema({
     nome: {
         type: String,
         required: true,
+        min: 5,
     },
     setor: {
         type: String,

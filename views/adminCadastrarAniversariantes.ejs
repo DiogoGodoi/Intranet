@@ -38,18 +38,30 @@
           </div>
           <div class="col-md-12">
             <label for="foto" class="form-label">Foto</label>
-            <input type="file" class="form-control" placeholder="Arquivo" name="foto">
+            <input type="file" class="form-control" placeholder="Arquivo" name="foto" required>
           </div>
           <div class="col-12">
           </div>
           <div class="col-12">
             <center><button type="submit" class="btn btn-primary">Incluir</button></center>
-          </div>          
-          <% erros.forEach(erros => { %>
-            <div alerta class="alert alert-danger" role="alert">
-              <%= erros.texto %> 
-            </div>
-          <% }) %>
+          </div>     
+          <br>
+          
+          <% if (nome === "" && dataAniversario === "") { %>
+            <% mensagens.forEach(mensagens => { %> 
+              <div alerta class="alert alert-danger" role="alert">
+                <%= mensagens.erro %> 
+              </div>
+            <% }) %> 
+
+          <% }else if(nome !== undefined && dataAniversario !== undefined) { %>
+            <% mensagens.forEach(mensagens => { %>
+              <div alerta class="alert alert-success" role="alert">
+                <%= mensagens.sucesso %>
+              </div>
+            <%})%>
+          <% }%>
+                     
         </form>
       </div>
     <%- include('partials/footer') %>

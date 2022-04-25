@@ -14,13 +14,28 @@
 
     <div secao2>
         <div class="mb-3 col-12">
-            <form action="/admin/postagem/seguranca/cadastrar" method="post">
+            <form action="/admin/postagem/seguranca/cadastrar/add" method="post">
             <label for="exampleFormControlInput1" class="form-label">Titulo</label>
             <input type="text" class="form-control" placeholder="Titulo" name="titulo">
             <br>
             <label for="exampleFormControlTextarea1" class="form-label">Postagem</label>
             <textarea class="form-control" rows="5"  name="mensagem"></textarea><br><br>
             <center><button type="submit" class="btn btn-primary">Enviar</button></center>
+            <br>
+           
+            <% if (mensagem === "" && titulo === "") { %>
+                <% mensagens.forEach(mensagens => { %> 
+                  <div alerta class="alert alert-danger" role="alert">
+                    <%= mensagens.erro %> 
+                  </div>
+                <% }) %> 
+            <% }else if (titulo !== undefined && mensagem !== undefined) { %>
+                    <% mensagens.forEach(mensagens => { %>
+                        <div alerta class="alert alert-success">
+                            <%= mensagens.sucesso %> 
+                        </div>
+                    <% }) %>
+            <% } %>
             </form>
           </div>
     </div>
