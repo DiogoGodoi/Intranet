@@ -5,7 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/magic.css">
     <link rel="stylesheet" href="/css/bootstrap.css">
+    <script src="/jquery/jquery.js"></script>
     <title>Home</title>
 </head>
 <body>
@@ -21,7 +23,7 @@
                 <% }) %>
           </div>
           
-          <div secao4>      
+          <div secao4 zzzz>      
             <div enquadramentoSecoes class="col-4">
                 <img imagemDaSecao src="/css/img/icone2.png" alt="" srcset="">
             </div>
@@ -35,8 +37,9 @@
                     <a href="/home/aniversariantes" class="btn btn-primary">Clique aqui</a>
                   </div>
             </div>
-    </div>
-    <div secao5>
+          </div>
+
+           <div secao5 swashInRight2>
             <div enquadramentoSecoes class="col-4" style="background-color: rgb(4, 151, 219);">
                 <img imagemDaSecao src="/css/img/icone3.png" alt="" srcset="">
             </div>
@@ -50,8 +53,9 @@
                     <a href="/home/comunicados/exibir" class="btn btn-primary">Clique aqui</a>
                   </div>
             </div>
-    </div>
-    <div secao6>
+            </div>
+           
+            <div secao6 swashInLeft3>
             <div enquadramentoSecoes class="col-4">
                 <img imagemDaSecao src="/css/img/icone6.png" alt="" srcset="">
             </div>
@@ -65,8 +69,9 @@
                     <a href="" class="btn btn-primary">Clique aqui</a>
                   </div>
             </div>
-    </div>
-    <div secao7>
+            </div>
+            
+            <div secao7 swashInRight4>
             <div enquadramentoSecoes class="col-4" style="background-color: rgb(4, 151, 219);">
                 <img imagemDaSecao src="/css/img/icone7.png" alt="" srcset="">
             </div>
@@ -80,9 +85,9 @@
                     <a href="/home/postagem/seguranca/exibir" class="btn btn-primary">Clique aqui</a>
                   </div>
             </div>
-    </div>
-    <div secao8>
-            <div enquadramentoSecoes class="col-4">
+          </div>
+            <div secao8 swashInLeft5>
+            <div slideRight enquadramentoSecoes class="col-4">
                 <img imagemDaSecao src="/css/img/icone5.png" alt="" srcset="">
             </div>
             <div class="col-8">
@@ -98,6 +103,39 @@
     </div>
 
     <%- include('partials/footer') %>
+    <script type="/bootstrap/js/bootstrap.js"></script>
+    <script>
 
+        $('[zzzz]').addClass('desaparecer')
+      setInterval(function(){
+        $('[zzzz]').removeClass('desaparecer')
+        $('[zzzz]').addClass('magictime slideLeftReturn')
+      }, 500);
+
+        $('[swashInRight2]').addClass('desaparecer')
+      setInterval(function(){
+        $('[swashInRight2]').removeClass('desaparecer')
+        $('[swashInRight2]').addClass('magictime slideRightReturn')
+      }, 1000);
+      
+        $('[swashInLeft3]').addClass('desaparecer')
+      setInterval(function(){
+        $('[swashInLeft3]').removeClass('desaparecer')
+        $('[swashInLeft3]').addClass('magictime slideLeftReturn')
+      }, 1500);
+        
+        $('[swashInRight4]').addClass('desaparecer')
+      setInterval(function(){
+        $('[swashInRight4]').removeClass('desaparecer')
+        $('[swashInRight4]').addClass('magictime slideRightReturn')
+      }, 2000);
+
+        $('[swashInLeft5]').addClass('desaparecer')
+      setInterval(function(){
+        $('[swashInLeft5]').removeClass('desaparecer')
+        $('[swashInLeft5]').addClass('magictime slideLeftReturn')
+      }, 2500);
+
+    </script>
 </body>
 </html>
